@@ -1,0 +1,169 @@
+﻿<Window x:Class="MqttDemoApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MqttDemoApplication"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="720" Width="400">
+    <StackPanel>
+
+        <TextBlock Text="MQTT Demo Application" FontSize="32" TextAlignment="Center" />
+        
+        <!--Configuration-->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!--Title-->
+            <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
+                       Text="Configuration" Background="Black" Foreground="White"
+                       TextAlignment="Center" FontSize="18"
+                       Margin="12" Padding="4"
+                       />
+
+            <!--Host-->
+            <TextBlock Grid.Row="1" Grid.Column="0"
+                       Text="Host" TextAlignment="Right"
+                       Margin="12" Padding="4" FontSize="14"
+                       />
+            <TextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
+                     x:Name="Host" Text="labict.be"
+                     Margin="12" Padding="4" FontSize="14"
+                     />
+
+            <!--ClientID-->
+            <TextBlock Grid.Row="2" Grid.Column="0"
+                       Text="Client ID" TextAlignment="Right"
+                       Margin="12" Padding="4" FontSize="14"
+                       />
+            <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"
+                     x:Name="ClientID" Text="nico1234567"
+                     Margin="12" Padding="4" FontSize="14"
+                     />
+
+            <!--Button-->
+            <Button Grid.Row="3" Grid.Column="0"
+                    x:Name="Connect" Content="Connect"
+                    Padding="4" Margin="12" FontSize="14"
+                    Background="Black" Foreground="White"
+                    />
+            <Button Grid.Row="3" Grid.Column="2"
+                    x:Name="Disconnect" Content="Disconnect"
+                    Padding="4" Margin="12" FontSize="14"
+                    Background="Black" Foreground="White"
+                    />
+        </Grid>
+
+        <!--Publish-->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!--Title-->
+            <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
+                       Text="Publish" Background="Black" Foreground="White"
+                       TextAlignment="Center" FontSize="18"
+                       Margin="12" Padding="4"
+                       />
+
+            <!--Topic Publish-->
+            <TextBlock Grid.Row="1" Grid.Column="0"
+                       Text="Topic" TextAlignment="Right"
+                       Margin="12" Padding="4" FontSize="14"
+                       />
+            <TextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
+                     x:Name="PublishTopic" Text="test/nico/hello"
+                     Margin="12" Padding="4" FontSize="14"
+                     />
+
+            <!--Message-->
+            <TextBlock Grid.Row="2" Grid.Column="0"
+                       Text="Bericht" TextAlignment="Right"
+                       Margin="12" Padding="4" FontSize="14"
+                       />
+            <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"
+                     x:Name="PublishMessage" Text="Hallo vanuit C# ..."
+                     Margin="12" Padding="4" FontSize="14"
+                     />
+
+            <!--Button-->
+            <Button Grid.Row="3" Grid.Column="2"
+                    x:Name="Publish" Content="Publish"
+                    Padding="4" Margin="12" FontSize="14"
+                    Background="Black" Foreground="White"
+                    />
+        </Grid>
+
+        <!--Subscribe-->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!--Title-->
+            <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
+                       Text="Subscribe" Background="Black" Foreground="White"
+                       TextAlignment="Center" FontSize="18"
+                       Margin="12" Padding="4"
+                       />
+
+            <!--Topic Subscribe-->
+            <TextBlock Grid.Row="1" Grid.Column="0"
+                       Text="Topic" TextAlignment="Right"
+                       Margin="12" Padding="4" FontSize="14"
+                       />
+            <TextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
+                     x:Name="SubscribeTopic" Text="test/nico/hello"
+                     Margin="12" Padding="4" FontSize="14"
+                     />
+
+            <!--Message-->
+            <TextBlock Grid.Row="2" Grid.Column="0"
+                       Text="Bericht" TextAlignment="Right"
+                       Margin="12" Padding="4" FontSize="14"
+                       />
+            <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"
+                     x:Name="SubscribeMessage" Text="..."
+                     Margin="12" Padding="4" FontSize="14"
+                     />
+
+            <!--Button-->
+            <Button Grid.Row="3" Grid.Column="2"
+                    x:Name="Subscribe" Content="Subscribe"
+                    Padding="4" Margin="12" FontSize="14"
+                    Background="Black" Foreground="White"
+                    />
+        </Grid>
+
+    </StackPanel>
+</Window>
