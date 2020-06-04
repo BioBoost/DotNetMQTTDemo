@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:MqttDemoApplication"
         mc:Ignorable="d"
         Title="MainWindow" Height="720" Width="400">
+
     <StackPanel>
 
         <TextBlock Text="MQTT Demo Application" FontSize="32" TextAlignment="Center" />
@@ -54,14 +55,15 @@
 
             <!--Button-->
             <Button Grid.Row="3" Grid.Column="0"
-                    x:Name="Connect" Content="Connect"
+                    x:Name="Connect" Content="Connect" Click="Connect_Click"
                     Padding="4" Margin="12" FontSize="14"
                     Background="Black" Foreground="White"
                     />
             <Button Grid.Row="3" Grid.Column="2"
-                    x:Name="Disconnect" Content="Disconnect"
+                    x:Name="Disconnect" Content="Disconnect" Click="Disconnect_Click"
                     Padding="4" Margin="12" FontSize="14"
                     Background="Black" Foreground="White"
+                    IsEnabled="False"
                     />
         </Grid>
 
@@ -112,6 +114,8 @@
                     x:Name="Publish" Content="Publish"
                     Padding="4" Margin="12" FontSize="14"
                     Background="Black" Foreground="White"
+                    Click="Publish_Click"
+                    IsEnabled="False"
                     />
         </Grid>
 
@@ -161,7 +165,9 @@
             <Button Grid.Row="3" Grid.Column="2"
                     x:Name="Subscribe" Content="Subscribe"
                     Padding="4" Margin="12" FontSize="14"
+                    Click="Subscribe_Click"
                     Background="Black" Foreground="White"
+                    IsEnabled="False"
                     />
         </Grid>
 
